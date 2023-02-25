@@ -25,6 +25,7 @@ final class ConsonantCommands extends PluginBase {
                 if (!in_array(($label = $command->getLabel()), $converted)) {
                     $converted [] = $label;
                     $aliases = $command->getAliases();
+                    $aliases [] = $command->getName();
                     $newAliases = array_filter(array_map(function (string $keyword): string {
                         $choseong = array('ㄱ', 'ㄲ', 'ㄴ', 'ㄷ', 'ㄸ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅃ', 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅉ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ');
                         $result = '';
